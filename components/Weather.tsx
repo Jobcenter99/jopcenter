@@ -1,15 +1,34 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { Cloud, Sun, CloudRain, CloudSnow, Wind, Droplets, Thermometer, Eye, Gauge } from 'lucide-react';
+import { Cloud, Sun, CloudRain, CloudSnow, Wind, Droplets, Eye, Gauge } from 'lucide-react';
+
+interface ForecastDay {
+  day: string;
+  high: number;
+  low: number;
+  condition: string;
+}
+
+interface WeatherData {
+  location: string;
+  temperature: number;
+  description: string;
+  humidity: number;
+  windSpeed: number;
+  pressure: number;
+  visibility: number;
+  feelsLike: number;
+  forecast: ForecastDay[];
+}
 
 const WeatherViewer = () => {
-  const [weather, setWeather] = useState(null);
+  const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [location, setLocation] = useState('');
 
   // Mock weather data for demo (replace with real API call)
-  const fetchWeather = async (city) => {
+  const fetchWeather = async (city: string) => {
     setLoading(true);
     setError('');
     
@@ -18,20 +37,24 @@ const WeatherViewer = () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Mock data - replace with actual API call to OpenWeatherMap, etc.
-      const mockData = {
+      const descriptions = ['Sunny', 'Partly Cloudy', 'Rainy', 'Snowy'];
+      const conditions = ['sunny', 'cloudy', 'rainy', 'snowy'];
+      const days = ['Today', 'Tomorrow', 'Wed', 'Thu', 'Fri'];
+
+      const mockData: WeatherData = {
         location: city || 'New York',
         temperature: Math.round(Math.random() * 30 + 5),
-        description: ['Sunny', 'Partly Cloudy', 'Rainy', 'Snowy'][Math.floor(Math.random() * 4)],
+        description: descriptions[Math.floor(Math.random() * descriptions.length)],
         humidity: Math.round(Math.random() * 40 + 40),
         windSpeed: Math.round(Math.random() * 15 + 5),
         pressure: Math.round(Math.random() * 50 + 1000),
         visibility: Math.round(Math.random() * 5 + 5),
         feelsLike: Math.round(Math.random() * 30 + 5),
         forecast: Array.from({ length: 5 }, (_, i) => ({
-          day: ['Today', 'Tomorrow', 'Wed', 'Thu', 'Fri'][i],
+          day: days[i],
           high: Math.round(Math.random() * 25 + 15),
           low: Math.round(Math.random() * 15 + 5),
-          condition: ['sunny', 'cloudy', 'rainy', 'snowy'][Math.floor(Math.random() * 4)]
+          condition: conditions[Math.floor(Math.random() * conditions.length)]
         }))
       };
       
@@ -43,7 +66,7 @@ const WeatherViewer = () => {
     }
   };
 
-  const getWeatherIcon = (description) => {
+  const getWeatherIcon = (description: string) => {
     const desc = description?.toLowerCase() || '';
     if (desc.includes('sun')) return <Sun className="w-8 h-8 text-yellow-500" />;
     if (desc.includes('rain')) return <CloudRain className="w-8 h-8 text-blue-500" />;
@@ -51,7 +74,7 @@ const WeatherViewer = () => {
     return <Cloud className="w-8 h-8 text-gray-400" />;
   };
 
-  const getForecastIcon = (condition) => {
+  const getForecastIcon = (condition: string) => {
     switch (condition) {
       case 'sunny': return <Sun className="w-5 h-5 text-yellow-500" />;
       case 'rainy': return <CloudRain className="w-5 h-5 text-blue-500" />;
@@ -60,7 +83,7 @@ const WeatherViewer = () => {
     }
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.MouseEvent | React.KeyboardEvent) => {
     e.preventDefault();
     if (location.trim()) {
       fetchWeather(location.trim());
