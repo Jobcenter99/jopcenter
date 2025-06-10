@@ -33,11 +33,11 @@ export default function JobCenterLanding() {
 
   const jobCategories = [
     { icon: '💼', title: 'Бизнес', count: '1,234' },
-    { icon: '💻', title: 'IT', count: '856' },
+    { icon: '💻', title: 'IT, инженеринг', count: '856' },
     { icon: '🏥', title: 'Эрүүл мэнд', count: '432' },
     { icon: '🎓', title: 'Боловсрол', count: '289' },
     { icon: '🏗️', title: 'Барилга', count: '567' },
-    { icon: '🛍️', title: 'Борлуулалт', count: '743' }
+    { icon: '🛍️', title: 'Борлуулалт', count: '723' }
   ];
 
   const featuredJobs = [
