@@ -67,14 +67,13 @@ export default function JobCenterLanding() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="border-b border-gray-120 bg-white sticky top-0 z-50">
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-gradient-to-r from-blue-500/60 via-blue-400/50 to-blue-300/60 shadow-md border-b border-blue-200/30">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-3">
   {/* Replace this src with your actual image path */}
-             <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-15 w-50" />
-
-             <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">coming soon</span>
+             <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-auto w-60" />
+              <span className="text-xs text-yellow-500 bg-blue-100 px-2 py-1 rounded-full">v.01</span>
             </div>
 
             
