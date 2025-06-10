@@ -47,7 +47,7 @@ export default function JobCenterLanding() {
       title: 'Борлуулалтын менежер',
       company: 'Борлуулалтын компани (Машинтай бол давуу талтай)',
       location: 'Улаанбаатар, 9 дүүрэг',
-      salary: '1,200,000₮ эхлэнэ Борлуулалтын урамшуулалтай',
+      salary: '1,200,000₮ эхэлнэ Борлуулалтын урамшуулалтай',
       type: 'Бүтэн цаг',
       posted: '3 өдрийн өмнө'
     }
@@ -67,15 +67,16 @@ export default function JobCenterLanding() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="border-b border-gray-100 bg-white sticky top-0 z-50">
+      <header className="border-b border-gray-120 bg-white sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-3">
-              <div className="text-2xl font-bold text-gray-900">
-                Job<span className="text-blue-600">center</span>
-              </div>
-              <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">MN</span>
+  {/* Replace this src with your actual image path */}
+             <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-15 w-50" />
+
+             <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">coming soon</span>
             </div>
+
             
             <nav className="hidden md:flex space-x-8">
               <button className="text-gray-600 hover:text-gray-900 transition-colors">Сургалт</button>
@@ -126,7 +127,7 @@ export default function JobCenterLanding() {
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
-                  placeholder="Ажлын нэр, үгс..."
+                  placeholder="Хайж буй ажлын байр..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   onKeyPress={handleKeyPress}
@@ -183,7 +184,7 @@ export default function JobCenterLanding() {
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Ажлын чиглэл</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Салбар, чиглэл</h2>
             <p className="text-gray-600">Өөрт тохирох салбарыг сонгоорой</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -202,7 +203,7 @@ export default function JobCenterLanding() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Онцлох ажил</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Онцлох ажлын байрны санал</h2>
             <p className="text-gray-600">Шинэ болон хамгийн сайн ажлын байрууд</p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8">
@@ -238,8 +239,8 @@ export default function JobCenterLanding() {
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Хамтрагч компани</h2>
-            <p className="text-gray-600">Монголын тэргүүлэх компаниудтай хамтран</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Хамтрагч байгууллагууд</h2>
+            <p className="text-gray-600">Монголын тэргүүлэх компаниудтай хамтран ажиллах</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {companies.map((company, index) => (
@@ -276,10 +277,10 @@ export default function JobCenterLanding() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <div className="text-xl font-bold text-gray-900 mb-4">
-                Job<span className="text-blue-600">center</span>
+              <div className="mb-4">
+             <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-20 w-75" />
               </div>
-              <p className="text-gray-600 text-sm">Монголын тэргүүлэх ажлын байрны платформ</p>
+              <p className="text-center text-gray-600 text-sm">Монголын тэргүүлэх ажлын байрны платформ</p>
             </div>
             <div>
               <h3 className="font-semibold text-gray-900 mb-4">Ажил горилогч</h3>
