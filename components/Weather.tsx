@@ -6,9 +6,23 @@ export default function JobCenterLanding() {
   const [searchTerm, setSearchTerm] = useState('');
   const [location, setLocation] = useState('');
   const [isVisible, setIsVisible] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const heroImages = [
+    '/hero-backgrounds/bg1.jpg',
+    '/hero-backgrounds/bg2.jpg',
+    '/hero-backgrounds/bg3.jpg',
+    '/hero-backgrounds/bg4.jpg',
+    '/hero-backgrounds/bg5.jpg',
+    '/hero-backgrounds/bg6.jpg',
+    '/hero-backgrounds/bg7.jpg',  ];
 
   useEffect(() => {
     setIsVisible(true);
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 10000);
+    return () => clearInterval(interval);
   }, []);
 
   const companies = [
@@ -71,18 +85,14 @@ export default function JobCenterLanding() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-3">
-  {/* Replace this src with your actual image path */}
-             <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-auto w-60" />
+              <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-auto w-60" />
               <span className="text-xs text-yellow-500 bg-blue-100 px-2 py-1 rounded-full">v.01</span>
             </div>
-
-            
             <nav className="hidden md:flex space-x-8">
               <button className="text-gray-600 hover:text-gray-900 transition-colors">Сургалт</button>
               <button className="text-gray-600 hover:text-gray-900 transition-colors">Байгууллага</button>
               <button className="text-gray-600 hover:text-gray-900 transition-colors">Зөвлөгөө</button>
             </nav>
-            
             <div className="flex items-center space-x-4">
               <button className="text-gray-600 hover:text-gray-900 transition-colors">Нэвтрэх</button>
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
@@ -95,33 +105,45 @@ export default function JobCenterLanding() {
 
       {/* News Banner */}
       <section className="bg-gradient-to-r from-blue-50 to-indigo-50 py-4">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-10">
           <div className="flex items-center justify-center space-x-4 text-sm">
             <span className="text-blue-600 font-medium">🎉Шинэ мэдээ🎉</span>
             <span className="text-gray-700">Jobcenter.mn албан ёсны нээлт тун удахгүй</span>
-              <a
+            <a
               href="https://www.facebook.com/people/Jobcentermn/61569309015026/"
               target="_blank"
-             rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-700 font-medium"
-              >
-                Дэлгэрэнгүй →
-              </a>
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-700 font-medium"
+            >
+              Дэлгэрэнгүй →
+            </a>
           </div>
         </div>
       </section>
 
       {/* Hero Section */}
-      <section className={`py-20 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+      <section
+        className={`relative py-20 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'
+        } bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 overflow-hidden shadow-xl rounded-lg`}
+      >
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-zoom opacity-20 transition-all duration-1000"
+          style={{ backgroundImage: `url(${heroImages[currentImage]})` }}
+        />
+
+        {/* Optional Decorative Clouds */}
+        <div className="absolute inset-0 bg-[url('/clouds.svg')] bg-cover bg-center opacity-10 pointer-events-none" />
+
+        <div className="relative max-w-4xl mx-auto px-6 text-center z-10">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight drop-shadow-lg">
             Мөрөөдлийн ажлаа
             <br />
-            <span className="text-blue-600">олоорой</span>
+            <span className="text-blue-700 drop-shadow-xl">олоорой</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Монголын Үндэсний Хөдөлмөр Хамгаалал, Эрүүл Ахуйн Холбоо. 
-            Мянга мянган боломж, нэг дороос.
+          <p className="text-xl text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
+            Монголын Үндэсний Хөдөлмөр Хамгаалал, Эрүүл Ахуйн Холбоо. Мянга мянган боломж, нэг дороос.
           </p>
 
           {/* Search Bar */}
@@ -282,7 +304,7 @@ export default function JobCenterLanding() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="mb-4">
-             <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-20 w-75" />
+             <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-auto w-75" />
               </div>
               <p className="text-center text-gray-600 text-sm">Монголын тэргүүлэх ажлын байрны платформ</p>
             </div>
