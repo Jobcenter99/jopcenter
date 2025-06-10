@@ -12,9 +12,9 @@ export default function JobCenterLanding() {
   }, []);
 
   const companies = [
-    { name: 'МСДИ КОНСАЛТИНГ', type: 'Зөвлөх үйлчилгээ', logo: '🏢' },
-    { name: 'И ЭМ ТЕХНОЛОГИ', type: 'IT & Технологи', logo: '💻' },
-    { name: 'Хан-Уул дүүрэг', type: 'Төрийн байгууллага', logo: '🏛️' }
+    { name: 'ХХҮЕГазар', type: 'Агентлаг', logo: '🏢' },
+    { name: 'МХБНХолбоо', type: 'Төрийн бус байгууллага', logo: '🏢' },
+    { name: 'СХД ХХҮГ', type: 'Төрийн байгууллага', logo: '🏛️' }
   ];
 
   const jobCategories = [
@@ -28,18 +28,18 @@ export default function JobCenterLanding() {
 
   const featuredJobs = [
     {
-      title: 'Програм хөгжүүлэгч',
-      company: 'И ЭМ Технологи',
-      location: 'Улаанбаатар',
-      salary: '1,500,000₮ - 2,500,000₮',
+      title: 'Төслийн менежер',
+      company: 'Монголын Хөдөлмөрийн Биржүүдийн Нэгдсэн Холбоо',
+      location: 'Улаанбаатар, Баянгол дүүрэг',
+      salary: '2,500,000₮ - 3,500,000₮',
       type: 'Бүтэн цаг',
-      posted: '2 өдрийн өмнө'
+      posted: '7 өдрийн өмнө'
     },
     {
-      title: 'Маркетингийн менежер',
-      company: 'МСДИ Консалтинг',
-      location: 'Хан-Уул дүүрэг',
-      salary: '1,200,000₮ - 1,800,000₮',
+      title: 'Архив, бичиг хэргийн мэргэжилтэн',
+      company: 'Монголын Хөдөлмөрийн Биржүүдийн Нэгдсэн Холбоо',
+      location: 'Улаанбаатар, Баянгол дүүрэг',
+      salary: '1,800,000₮ - 2,200,000₮',
       type: 'Бүтэн цаг',
       posted: '1 өдрийн өмнө'
     },
@@ -47,8 +47,8 @@ export default function JobCenterLanding() {
       title: 'UI/UX Дизайнер',
       company: 'Креатив Студио',
       location: 'Улаанбаатар',
-      salary: '800,000₮ - 1,200,000₮',
-      type: 'Хагас цаг',
+      salary: '1,800,000₮ - 2,200,000₮',
+      type: 'Бүтэн цаг',
       posted: '3 өдрийн өмнө'
     }
   ];
@@ -64,7 +64,6 @@ export default function JobCenterLanding() {
     }
   };
 
-  const newLocal = <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">BETA</span>;
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -75,12 +74,12 @@ export default function JobCenterLanding() {
               <div className="text-2xl font-bold text-gray-900">
                 Job<span className="text-blue-600">center</span>
               </div>
-              {newLocal}
+              <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">MN</span>
             </div>
             
             <nav className="hidden md:flex space-x-8">
-              <button className="text-gray-600 hover:text-gray-900 transition-colors">Ажил</button>
-              <button className="text-gray-600 hover:text-gray-900 transition-colors">Компани</button>
+              <button className="text-gray-600 hover:text-gray-900 transition-colors">Сургалт</button>
+              <button className="text-gray-600 hover:text-gray-900 transition-colors">Байгууллага</button>
               <button className="text-gray-600 hover:text-gray-900 transition-colors">Зөвлөгөө</button>
             </nav>
             
@@ -98,8 +97,8 @@ export default function JobCenterLanding() {
       <section className="bg-gradient-to-r from-blue-50 to-indigo-50 py-4">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center justify-center space-x-4 text-sm">
-            <span className="text-blue-600 font-medium">🎉 Шинэ мэдээ:</span>
-            <span className="text-gray-700">Jobcenter.mn албан ёсоор нээлтээ хийлээ</span>
+            <span className="text-blue-600 font-medium">🎉Шинэ мэдээ🎉</span>
+            <span className="text-gray-700">Jobcenter.mn албан ёсны нээлт тун удахгүй</span>
             <button className="text-blue-600 hover:text-blue-700 font-medium">
               Дэлгэрэнгүй →
             </button>
@@ -116,7 +115,7 @@ export default function JobCenterLanding() {
             <span className="text-blue-600">олоорой</span>
           </h1>
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Монголын хамгийн том ажлын байрны платформ. 
+            Монголын Үндэсний Хөдөлмөр Хамгаалал, Эрүүл Ахуйн Холбоо. 
             Мянга мянган боломж, нэг дороос.
           </p>
 
@@ -263,7 +262,7 @@ export default function JobCenterLanding() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-gray-900 hover:bg-gray-100 font-medium py-3 px-6 rounded-lg transition-colors">
-              Ажил ологч
+              Ажил горилогч
             </button>
             <button className="border border-white text-white hover:bg-white hover:text-gray-900 font-medium py-3 px-6 rounded-lg transition-colors">
               Ажил олгогч
@@ -283,7 +282,7 @@ export default function JobCenterLanding() {
               <p className="text-gray-600 text-sm">Монголын тэргүүлэх ажлын байрны платформ</p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-4">Ажил ологч</h3>
+              <h3 className="font-semibold text-gray-900 mb-4">Ажил горилогч</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li><button className="hover:text-gray-900 transition-colors">Ажил хайх</button></li>
                 <li><button className="hover:text-gray-900 transition-colors">Анкет үүсгэх</button></li>
@@ -302,7 +301,7 @@ export default function JobCenterLanding() {
               <h3 className="font-semibold text-gray-900 mb-4">Тусламж</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li><button className="hover:text-gray-900 transition-colors">Холбоо барих</button></li>
-                <li><button className="hover:text-gray-900 transition-colors">FAQ</button></li>
+                <li><button className="hover:text-gray-900 transition-colors">Утас 9800-9230</button></li>
                 <li><button className="hover:text-gray-900 transition-colors">Нууцлал</button></li>
               </ul>
             </div>
