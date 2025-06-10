@@ -99,9 +99,14 @@ export default function JobCenterLanding() {
           <div className="flex items-center justify-center space-x-4 text-sm">
             <span className="text-blue-600 font-medium">🎉Шинэ мэдээ🎉</span>
             <span className="text-gray-700">Jobcenter.mn албан ёсны нээлт тун удахгүй</span>
-            <button className="text-blue-600 hover:text-blue-700 font-medium">
-              Дэлгэрэнгүй →
-            </button>
+              <a
+              href="https://www.facebook.com/people/Jobcentermn/61569309015026/"
+              target="_blank"
+             rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-700 font-medium"
+              >
+                Дэлгэрэнгүй →
+              </a>
           </div>
         </div>
       </section>
