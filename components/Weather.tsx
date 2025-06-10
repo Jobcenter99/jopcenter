@@ -57,7 +57,7 @@ export default function JobCenterLanding() {
     console.log('Searching for:', searchTerm, 'in', location);
   };
 
-  const handleKeyPress = (event) => {
+  const handleKeyPress = function (event: { key: string; preventDefault: () => void; }) {
     if (event.key === 'Enter') {
       event.preventDefault();
       handleSearch();
@@ -74,7 +74,7 @@ export default function JobCenterLanding() {
               <div className="text-2xl font-bold text-gray-900">
                 Job<span className="text-blue-600">center</span>
               </div>
-              <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">BETA</span>
+              <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full"><MN></MN></span>
             </div>
             
             <nav className="hidden md:flex space-x-8">
@@ -310,7 +310,7 @@ export default function JobCenterLanding() {
             <p>&copy; 2025 Jobcenter.mn. Бүх эрх хуулиар хамгаалагдсан.</p>
           </div>
         </div>
-      </section>
+      </footer>
     </div>
   );
 }
