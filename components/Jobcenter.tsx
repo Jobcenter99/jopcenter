@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useEffect } from 'react';
 import { Search, MapPin, Briefcase, Users, TrendingUp, ChevronRight, Star, ArrowRight, Building, Clock, DollarSign } from 'lucide-react';
 
@@ -12,7 +13,7 @@ export default function JobCenterLanding() {
 
   const companies = [
     { name: 'МСДИ КОНСАЛТИНГ ГРУПП', type: 'Хөгжлийн зөвлөх харилцагч компани', logo: '🏢' },
-    { name: 'И ЭМ ТЕХНОЛОГИ', type: 'Хүүхдэдрлэгдмэл харилцлагтай компани', logo: '💻' },
+    { name: 'И ЭМ ТЕХНОЛОГИ', type: 'Хүүхэд хөгжлийн харилцагч компани', logo: '💻' },
     { name: 'Хан-Уул дүүрэг', type: 'Засгийн газар', logo: '🏛️' }
   ];
 
@@ -59,16 +60,18 @@ export default function JobCenterLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-4">
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-2xl font-bold text-2xl shadow-lg transform hover:scale-105 transition-transform">
-                Jobcenter<span className="text-yellow-300">.mn</span>
+              <div className="bg-blue-600 text-white px-6 py-3 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                <span className="font-bold text-2xl">
+                  <span className="text-yellow-400">Job</span>center<span className="text-yellow-400">.mn</span>
+                </span>
               </div>
               <span className="text-gray-600 font-medium border-2 border-gray-300 px-3 py-1 rounded-full">Хөдөлмөр эрхлэлтийг дэмжих</span>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Ажлын байр</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Компаниуд</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Зөвлөгөө</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Холбоо барих</a>
+              <button className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Ажлын байр</button>
+              <button className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Компаниуд</button>
+              <button className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Зөвлөгөө</button>
+              <button className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Холбоо барих</button>
             </nav>
             <div className="flex space-x-4">
               <button className="text-blue-600 hover:text-blue-700 font-medium px-4 py-2 rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition-all">
@@ -85,13 +88,14 @@ export default function JobCenterLanding() {
         </div>
       </header>
 
-      {/* News Section */}
-      <section className="bg-gradient-to-r from-yellow-400 to-orange-500 py-4">
+      {/* Expanded News Section */}
+      <section className="bg-gradient-to-r from-yellow-400 to-orange-500 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center space-x-4 text-white">
+          {/* Main News Banner */}
+          <div className="flex items-center justify-center space-x-4 text-white mb-8">
             <div className="flex items-center space-x-3">
               <div className="bg-white p-2 rounded-lg shadow-md">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-sm">
                   J.mn
                 </div>
               </div>
@@ -107,6 +111,67 @@ export default function JobCenterLanding() {
               Дэлгэрэнгүй →
             </button>
           </div>
+
+          {/* News Grid */}
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 text-white hover:bg-opacity-20 transition-all">
+              <div className="flex items-center mb-4">
+                <div className="bg-blue-600 p-2 rounded-lg mr-3">
+                  <TrendingUp className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-sm font-medium text-yellow-200">2025.06.10</span>
+              </div>
+              <h3 className="text-lg font-bold mb-3">Ажлын байрны зах зээл өсөж байна</h3>
+              <p className="text-sm text-gray-100 mb-4">IT салбарт 2,500 шинэ ажлын байр нэмэгдэж, цалин 15% өссөн байна.</p>
+              <button className="text-yellow-300 hover:text-yellow-200 text-sm font-medium">
+                Унших →
+              </button>
+            </div>
+
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 text-white hover:bg-opacity-20 transition-all">
+              <div className="flex items-center mb-4">
+                <div className="bg-green-600 p-2 rounded-lg mr-3">
+                  <Users className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-sm font-medium text-yellow-200">2025.06.08</span>
+              </div>
+              <h3 className="text-lg font-bold mb-3">Шинэ хамтрагч компаниуд</h3>
+              <p className="text-sm text-gray-100 mb-4">50 гаруй том компани манай платформд нэгдэж, 1000+ ажлын байр нэмэгдлээ.</p>
+              <button className="text-yellow-300 hover:text-yellow-200 text-sm font-medium">
+                Унших →
+              </button>
+            </div>
+
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 text-white hover:bg-opacity-20 transition-all">
+              <div className="flex items-center mb-4">
+                <div className="bg-purple-600 p-2 rounded-lg mr-3">
+                  <Star className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-sm font-medium text-yellow-200">2025.06.05</span>
+              </div>
+              <h3 className="text-lg font-bold mb-3">Карьерийн зөвлөгөө үйлчилгээ</h3>
+              <p className="text-sm text-gray-100 mb-4">Мэргэжлийн зөвлөхүүдээс үнэгүй карьерийн зөвлөгөө авах боломжтой боллоо.</p>
+              <button className="text-yellow-300 hover:text-yellow-200 text-sm font-medium">
+                Унших →
+              </button>
+            </div>
+          </div>
+
+          {/* News Ticker */}
+          <div className="mt-8 bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4">
+            <div className="flex items-center space-x-4 text-white">
+              <span className="font-bold text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full">МЭДЭЭЛЭЛ</span>
+              <div className="flex-1 overflow-hidden">
+                <div className="animate-pulse">
+                  <span className="text-sm">
+                    📊 Өнөөдөр 250 шинэ ажлын байр нэмэгдлээ • 
+                    🎯 1,200 хүн ажилд орлоо • 
+                    💼 Хамгийн их хайгдаж буй мэргэжил: Програмист, Дизайнер, Менежер
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -118,7 +183,7 @@ export default function JobCenterLanding() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> олоорой</span>
           </h1>
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-            Монгол улсын хамгийн том ажлын байрны цахим сайт. Мянга мянган ажлын байрны мэдээлэл, 
+            Монгол улсын хамгийн том ажлын байрны цахим сайт. Мянга мянган ажлын байрны мэдээгэсолого, 
             мэргэжлийн зөвлөгөө болон карьерийн хөгжлийн боломжууд.
           </p>
 
@@ -300,8 +365,8 @@ export default function JobCenterLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl font-bold text-xl mb-4 inline-block">
-                Jobcenter<span className="text-yellow-300">.mn</span>
+              <div className="bg-blue-600 text-white px-4 py-2 rounded-xl font-bold text-xl mb-4 inline-block">
+                <span className="text-yellow-400">Job</span>center<span className="text-yellow-400">.mn</span>
               </div>
               <p className="text-gray-400 mb-4">Монгол улсын тэргүүлэх ажлын байрны цахим сайт</p>
               <div className="flex space-x-4">
@@ -313,28 +378,28 @@ export default function JobCenterLanding() {
             <div>
               <h3 className="font-bold text-lg mb-4">Ажил ологчдод</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Ажлын байр хайх</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Анкет үүсгэх</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Карьерийн зөвлөгөө</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Цалингийн хэмжээ</a></li>
+                <li><button className="hover:text-white transition-colors text-left">Ажлын байр хайх</button></li>
+                <li><button className="hover:text-white transition-colors text-left">Анкет үүсгэх</button></li>
+                <li><button className="hover:text-white transition-colors text-left">Карьерийн зөвлөгөө</button></li>
+                <li><button className="hover:text-white transition-colors text-left">Цалингийн хэмжээ</button></li>
               </ul>
             </div>
             <div>
               <h3 className="font-bold text-lg mb-4">Ажил олгогчдод</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Ажлын байр нэмэх</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Анкет хайх</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Үйлчилгээний үнэ</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Компанийн хуудас</a></li>
+                <li><button className="hover:text-white transition-colors text-left">Ажлын байр нэмэх</button></li>
+                <li><button className="hover:text-white transition-colors text-left">Анкет хайх</button></li>
+                <li><button className="hover:text-white transition-colors text-left">Үйлчилгээний үнэ</button></li>
+                <li><button className="hover:text-white transition-colors text-left">Компанийн хуудас</button></li>
               </ul>
             </div>
             <div>
               <h3 className="font-bold text-lg mb-4">Тусламж</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Холбоо барих</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Түгээмэл асуулт</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Нөхцөл заавар</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Нууцлалын бодлого</a></li>
+                <li><button className="hover:text-white transition-colors text-left">Холбоо барих</button></li>
+                <li><button className="hover:text-white transition-colors text-left">Түгээмэл асуулт</button></li>
+                <li><button className="hover:text-white transition-colors text-left">Нөхцөл заавар</button></li>
+                <li><button className="hover:text-white transition-colors text-left">Нууцлалын бодлого</button></li>
               </ul>
             </div>
           </div>
