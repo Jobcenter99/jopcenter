@@ -1,10 +1,10 @@
-import WeatherViewer from "@/components/Weather";
+import JobcenterViewer from "@/components/Weather";
 import Image from "next/image";
 
-export default function Home() {
+export default function Jobcenter() {
   return (
-<div>
-  <JobworkflowViewer/>
-</div>
+    <div>
+      <JobcenterViewer />
+    </div>
   );
 }
