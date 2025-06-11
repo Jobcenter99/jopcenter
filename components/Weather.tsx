@@ -189,20 +189,20 @@ export default function JobCenterLanding() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">15,000+</div>
-              <div className="text-gray-600">Ажлын байр</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">9,000+</div>
+              <div className="text-2xl text-gray-600">Ажлын байр</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">2,500+</div>
-              <div className="text-gray-600">Компани</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">10+</div>
+              <div className="text-2xl text-gray-600">Jobcenter</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">50,000+</div>
-              <div className="text-gray-600">Хэрэглэгч</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">60+</div>
+              <div className="text-2xl text-gray-600">Хөдөлмөрийн хувийн бирж</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-gray-900 mb-2">95%</div>
-              <div className="text-gray-600">Амжилт</div>
+              <div className="text-2xl text-gray-600">Амжилт</div>
             </div>
           </div>
         </div>
@@ -217,10 +217,14 @@ export default function JobCenterLanding() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {jobCategories.map((category, index) => (
-              <button key={index} className="bg-white p-6 rounded-xl border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all text-left group">
-                <div className="text-2xl mb-3">{category.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{category.title}</h3>
-                <p className="text-gray-500 text-sm">{category.count} ажлын байр</p>
+              <button key={index} 
+                  className="bg-white/30 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl transition-all text-left group transform hover:scale-105"
+                >
+                <div className="text-3xl mb-3 drop-shadow">{category.icon}</div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors drop-shadow-sm">
+               {category.title}
+               </h3>
+               <p className="text-gray-600 text-sm">{category.count} ажлын байр</p>
               </button>
             ))}
           </div>
