@@ -2,6 +2,82 @@
 import React, { useState, useEffect } from 'react';
 import { Search, MapPin, Briefcase, Users, TrendingUp, ChevronRight, Star, ArrowRight, Building, Clock, DollarSign } from 'lucide-react';
 
+const NewsSection = () => {
+  const newsItems = [
+    {
+      title: "Ажил хайгчдад зориулсан шинэ зөвлөмж",
+      text: "Ажилчдын сайн сайхан байдлыг нэмэгдүүлдэг ажлын байрны өдөр тутмын зан үйл",
+      image: "/newsitems/10.jpg",
+    },
+    {
+      title: "Ажил олгогчдод зориулсан сургалт",
+      text: "Хүний нөөцийн шилдэг аргачлалууд.",
+      image: "/newsitems/11.jpg",
+    },
+    {
+      title: "Jobcenter.mn албан ёсоор нээгдлээ",
+      text: "Манай шинэ платформ одоо бүрэн хүчин чадлаар ажиллаж байна.",
+      image: "/newsitems/12.jpg",
+    },
+        {
+      title: "Jobcenter.mn албан ёсоор нээгдлээ",
+      text: "Манай шинэ платформ одоо бүрэн хүчин чадлаар ажиллаж байна.",
+      image: "/newsitems/13.jpg",
+    },
+    {
+      title: "Олон улсын жишигт нийцсэн Jobcenter",
+      text: "2025 онд Аймаг, Нийслэлийн хэмжээнд 6 Жобцентр удахгүй нээгдэх юм.",
+      image: "/newsitems/14.jpg",
+    },
+    {
+      title: "Jobcenter төвүүд нээлтээ хийлээ",
+      text: "2024 онд Монгол улсын хэмжээнд 4 ЖобЦентр нээгдсэн байна.",
+      image: "/newsitems/15.jpg",
+    },
+  ];
+
+  const [shuffledNews, setShuffledNews] = useState(newsItems);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShuffledNews((prev) => [...prev].sort(() => 0.5 - Math.random()));
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="py-20 bg-gradient-to-br from-blue-50 via-white/40 to-blue-100 backdrop-blur-md">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">Онцлох мэдээ</h2>
+          <p className="text-gray-600">Шинэ мэдээлэл, зөвлөмжүүдийг нэг дороос</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {shuffledNews.map((news, index) => (
+            <div
+              key={index}
+              className="rounded-2xl bg-white/70 backdrop-blur-lg shadow-2xl border border-white/40 overflow-hidden transform hover:scale-105 transition-all duration-700 hover:shadow-blue-200"
+            >
+              <img
+                src={news.image}
+                alt={news.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-blue-800 mb-2">{news.title}</h3>
+                <p className="text-sm text-gray-600 mb-4">{news.text}</p>
+                <button className="flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm transition-all">
+                  Дэлгэрэнгүй <ArrowRight className="w-4 h-4 ml-1" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default function JobCenterLanding() {
   const [searchTerm, setSearchTerm] = useState('');
   const [location, setLocation] = useState('');
@@ -15,7 +91,8 @@ export default function JobCenterLanding() {
     '/hero-backgrounds/bg4.jpg',
     '/hero-backgrounds/bg5.jpg',
     '/hero-backgrounds/bg6.jpg',
-    '/hero-backgrounds/bg7.jpg',  ];
+    '/hero-backgrounds/bg7.jpg',
+  ];
 
   useEffect(() => {
     setIsVisible(true);
@@ -71,7 +148,7 @@ export default function JobCenterLanding() {
     console.log('Searching for:', searchTerm, 'in', location);
   };
 
-  const handleKeyPress = function (event: { key: string; preventDefault: () => void; }) {
+  const handleKeyPress = (event: { key: string; preventDefault: () => void; }) => {
     if (event.key === 'Enter') {
       event.preventDefault();
       handleSearch();
@@ -89,9 +166,9 @@ export default function JobCenterLanding() {
               <span className="text-xl text-yellow-500 bg-blue-100 px-2 py-1 rounded-full">v.01</span>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <button className="text-gray-600 hover:text-black-900 transition-colors">Сургалт</button>
-              <button className="text-gray-600 hover:text-black-900 transition-colors">Байгууллага</button>
-              <button className="text-gray-600 hover:text-black-900 transition-colors">Зөвлөгөө</button>
+              <button className="text-gray-600 hover:text-gray-900 transition-colors">Сургалт</button>
+              <button className="text-gray-600 hover:text-gray-900 transition-colors">Байгууллага</button>
+              <button className="text-gray-600 hover:text-gray-900 transition-colors">Зөвлөгөө</button>
             </nav>
             <div className="flex items-center space-x-4">
               <button className="text-gray-600 hover:text-gray-900 transition-colors">Нэвтрэх</button>
@@ -129,7 +206,7 @@ export default function JobCenterLanding() {
       >
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-zoom opacity-40 transition-all duration-800"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 transition-all duration-800"
           style={{ backgroundImage: `url(${heroImages[currentImage]})` }}
         />
 
@@ -142,10 +219,10 @@ export default function JobCenterLanding() {
             <br />
             <span className="text-blue-700 drop-shadow-xl">олоорой</span>
           </h1>
-          <p className="text-xl text-black-700 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
+          <p className="text-xl text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
             Монголын Үндэсний Хөдөлмөр Хамгаалал, Эрүүл Ахуйн Холбоо. 
              <br />
-             <span className="text-blue-700 drop-shadow-x1">Мянга мянган боломж Нэг дороос</span>
+             <span className="text-blue-700 drop-shadow-xl">Мянга мянган боломж Нэг дороос</span>
            </p>
 
           {/* Search Bar */}
@@ -208,6 +285,9 @@ export default function JobCenterLanding() {
         </div>
       </section>
 
+      {/* News shuffling section*/}
+      <NewsSection />
+  
       {/* Job Categories */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
@@ -232,56 +312,55 @@ export default function JobCenterLanding() {
       </section>
 
       {/* Featured Jobs */}
-<section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100">
-  <div className="max-w-6xl mx-auto px-6">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl font-extrabold text-gray-900 drop-shadow mb-4">
-        Онцлох ажлын байрны санал
-      </h2>
-      <p className="text-gray-600 text-lg">
-        Шинэ болон хамгийн сайн ажлын байрууд
-      </p>
-    </div>
-
-    <div className="grid lg:grid-cols-3 gap-8">
-      {featuredJobs.map((job, index) => (
-        <div
-          key={index}
-          className="bg-white/20 backdrop-blur-md p-6 rounded-2xl border border-white/30 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-        >
-          <div className="flex justify-between items-start mb-4">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-1 drop-shadow-sm">
-                {job.title}
-              </h3>
-              <p className="text-gray-700 text-sm mb-1">{job.company}</p>
-              <p className="text-gray-500 text-sm">{job.location}</p>
-            </div>
-            <span className="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold shadow-sm">
-              {job.type}
-            </span>
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-extrabold text-gray-900 drop-shadow mb-4">
+              Онцлох ажлын байрны санал
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Шинэ болон хамгийн сайн ажлын байрууд
+            </p>
           </div>
 
-          <div className="space-y-2 mb-6 text-sm">
-            <p className="text-gray-800 font-semibold">{job.salary}</p>
-            <p className="text-gray-500">{job.posted}</p>
+          <div className="grid lg:grid-cols-3 gap-8">
+            {featuredJobs.map((job, index) => (
+              <div
+                key={index}
+                className="bg-white/20 backdrop-blur-md p-6 rounded-2xl border border-white/30 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1 drop-shadow-sm">
+                      {job.title}
+                    </h3>
+                    <p className="text-gray-700 text-sm mb-1">{job.company}</p>
+                    <p className="text-gray-500 text-sm">{job.location}</p>
+                  </div>
+                  <span className="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold shadow-sm">
+                    {job.type}
+                  </span>
+                </div>
+
+                <div className="space-y-2 mb-6 text-sm">
+                  <p className="text-gray-800 font-semibold">{job.salary}</p>
+                  <p className="text-gray-500">{job.posted}</p>
+                </div>
+
+                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition-all shadow-md hover:shadow-lg">
+                  Дэлгэрэнгүй
+                </button>
+              </div>
+            ))}
           </div>
 
-          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition-all shadow-md hover:shadow-lg">
-            Дэлгэрэнгүй
-          </button>
+          <div className="text-center mt-12">
+            <button className="bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition">
+              Бүх ажил үзэх
+            </button>
+          </div>
         </div>
-      ))}
-    </div>
-
-    <div className="text-center mt-12">
-      <button className="bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition">
-        Бүх ажил үзэх
-      </button>
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* Companies */}
       <section className="py-20">
@@ -321,42 +400,48 @@ export default function JobCenterLanding() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-100 py-12">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
+      <footer className="bg-gradient-to-br from-blue-100/60 via-white/40 to-blue-300/50 backdrop-blur-md border-t border-white/30 shadow-inner py-16">
+        <div className="max-w-6xl mx-auto px-6 text-gray-800">
+          <div className="grid md:grid-cols-4 gap-10">
+            <div className="text-center md:text-left">
               <div className="mb-4">
-             <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-auto w-75" />
+                <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-auto w-60 mx-auto md:mx-0 drop-shadow" />
               </div>
-              <p className="text-center text-gray-600 text-sm">Монголын тэргүүлэх ажлын байрны платформ</p>
+              <p className="text-sm text-gray-700">
+                Монголын тэргүүлэх ажлын байрны платформ
+              </p>
             </div>
+
             <div>
-              <h3 className="font-semibold text-gray-900 mb-4">Ажил горилогч</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><button className="hover:text-gray-900 transition-colors">Ажил хайх</button></li>
-                <li><button className="hover:text-gray-900 transition-colors">Анкет үүсгэх</button></li>
-                <li><button className="hover:text-gray-900 transition-colors">Зөвлөгөө</button></li>
+              <h3 className="font-semibold text-blue-800 mb-4 text-lg">Ажил горилогч</h3>
+              <ul className="space-y-2 text-sm">
+                <li><button className="text-gray-700 hover:text-blue-700 transition">Ажил хайх</button></li>
+                <li><button className="text-gray-700 hover:text-blue-700 transition">Анкет үүсгэх</button></li>
+                <li><button className="text-gray-700 hover:text-blue-700 transition">Зөвлөгөө</button></li>
               </ul>
             </div>
+
             <div>
-              <h3 className="font-semibold text-gray-900 mb-4">Ажил олгогч</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><button className="hover:text-gray-900 transition-colors">Ажил нэмэх</button></li>
-                <li><button className="hover:text-gray-900 transition-colors">Анкет хайх</button></li>
-                <li><button className="hover:text-gray-900 transition-colors">Үнийн санал</button></li>
+              <h3 className="font-semibold text-blue-800 mb-4 text-lg">Ажил олгогч</h3>
+              <ul className="space-y-2 text-sm">
+                <li><button className="text-gray-700 hover:text-blue-700 transition">Ажил нэмэх</button></li>
+                <li><button className="text-gray-700 hover:text-blue-700 transition">Анкет хайх</button></li>
+                <li><button className="text-gray-700 hover:text-blue-700 transition">Үнийн санал</button></li>
               </ul>
             </div>
+
             <div>
-              <h3 className="font-semibold text-gray-900 mb-4">Тусламж</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><button className="hover:text-gray-900 transition-colors">Холбоо барих</button></li>
-                <li><button className="hover:text-gray-900 transition-colors">Утас 9800-9230</button></li>
-                <li><button className="hover:text-gray-900 transition-colors">Нууцлал</button></li>
+              <h3 className="font-semibold text-blue-800 mb-4 text-lg">Тусламж</h3>
+              <ul className="space-y-2 text-sm">
+                <li><button className="text-gray-700 hover:text-blue-700 transition">Холбоо барих</button></li>
+                <li><button className="text-gray-700 hover:text-blue-700 transition">Утас 9800-9230</button></li>
+                <li><button className="text-gray-700 hover:text-blue-700 transition">Нууцлал</button></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-100 mt-8 pt-8 text-center text-sm text-gray-500">
-            <p>&copy; 2025 Jobcenter.mn. Бүх эрх хуулиар хамгаалагдсан.</p>
+
+          <div className="border-t border-white/20 mt-12 pt-6 text-center text-sm text-gray-600">
+            <p>&copy; 2025 <span className="text-blue-700 font-medium">Jobcenter.mn</span>. Бүх эрх хуулиар хамгаалагдсан.</p>
           </div>
         </div>
       </footer>
