@@ -81,17 +81,17 @@ export default function JobCenterLanding() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-gradient-to-r from-blue-500/60 via-blue-400/50 to-blue-300/60 shadow-md border-b border-blue-200/30">
+      <header className="sticky top-0 z-40 backdrop-blur-md bg-gradient-to-r from-blue-400/80 via-blue-400/60 to-yellow-400/60 shadow-md border-b border-blue-200/30">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-3">
-              <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-auto w-60" />
-              <span className="text-xs text-yellow-500 bg-blue-100 px-2 py-1 rounded-full">v.01</span>
+              <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-auto w-80" />
+              <span className="text-xl text-yellow-500 bg-blue-100 px-2 py-1 rounded-full">v.01</span>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <button className="text-gray-600 hover:text-gray-900 transition-colors">Сургалт</button>
-              <button className="text-gray-600 hover:text-gray-900 transition-colors">Байгууллага</button>
-              <button className="text-gray-600 hover:text-gray-900 transition-colors">Зөвлөгөө</button>
+              <button className="text-gray-600 hover:text-black-900 transition-colors">Сургалт</button>
+              <button className="text-gray-600 hover:text-black-900 transition-colors">Байгууллага</button>
+              <button className="text-gray-600 hover:text-black-900 transition-colors">Зөвлөгөө</button>
             </nav>
             <div className="flex items-center space-x-4">
               <button className="text-gray-600 hover:text-gray-900 transition-colors">Нэвтрэх</button>
@@ -129,7 +129,7 @@ export default function JobCenterLanding() {
       >
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-zoom opacity-20 transition-all duration-1000"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-zoom opacity-40 transition-all duration-800"
           style={{ backgroundImage: `url(${heroImages[currentImage]})` }}
         />
 
@@ -142,9 +142,11 @@ export default function JobCenterLanding() {
             <br />
             <span className="text-blue-700 drop-shadow-xl">олоорой</span>
           </h1>
-          <p className="text-xl text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
-            Монголын Үндэсний Хөдөлмөр Хамгаалал, Эрүүл Ахуйн Холбоо. Мянга мянган боломж, нэг дороос.
-          </p>
+          <p className="text-xl text-black-700 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
+            Монголын Үндэсний Хөдөлмөр Хамгаалал, Эрүүл Ахуйн Холбоо. 
+             <br />
+             <span className="text-blue-700 drop-shadow-x1">Мянга мянган боломж Нэг дороос</span>
+           </p>
 
           {/* Search Bar */}
           <div className="bg-white rounded-2xl shadow-lg p-6 max-w-3xl mx-auto border border-gray-100">
