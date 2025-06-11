@@ -232,40 +232,56 @@ export default function JobCenterLanding() {
       </section>
 
       {/* Featured Jobs */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Онцлох ажлын байрны санал</h2>
-            <p className="text-gray-600">Шинэ болон хамгийн сайн ажлын байрууд</p>
+<section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+  <div className="max-w-6xl mx-auto px-6">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-extrabold text-gray-900 drop-shadow mb-4">
+        Онцлох ажлын байрны санал
+      </h2>
+      <p className="text-gray-600 text-lg">
+        Шинэ болон хамгийн сайн ажлын байрууд
+      </p>
+    </div>
+
+    <div className="grid lg:grid-cols-3 gap-8">
+      {featuredJobs.map((job, index) => (
+        <div
+          key={index}
+          className="bg-white/20 backdrop-blur-md p-6 rounded-2xl border border-white/30 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+        >
+          <div className="flex justify-between items-start mb-4">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1 drop-shadow-sm">
+                {job.title}
+              </h3>
+              <p className="text-gray-700 text-sm mb-1">{job.company}</p>
+              <p className="text-gray-500 text-sm">{job.location}</p>
+            </div>
+            <span className="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold shadow-sm">
+              {job.type}
+            </span>
           </div>
-          <div className="grid lg:grid-cols-3 gap-8">
-            {featuredJobs.map((job, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-md transition-all">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{job.title}</h3>
-                    <p className="text-gray-600 text-sm mb-1">{job.company}</p>
-                    <p className="text-gray-500 text-sm">{job.location}</p>
-                  </div>
-                  <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded text-xs font-medium">{job.type}</span>
-                </div>
-                <div className="space-y-2 mb-6 text-sm">
-                  <p className="text-gray-900 font-medium">{job.salary}</p>
-                  <p className="text-gray-500">{job.posted}</p>
-                </div>
-                <button className="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-2 rounded-lg transition-colors">
-                  Дэлгэрэнгүй
-                </button>
-              </div>
-            ))}
+
+          <div className="space-y-2 mb-6 text-sm">
+            <p className="text-gray-800 font-semibold">{job.salary}</p>
+            <p className="text-gray-500">{job.posted}</p>
           </div>
-          <div className="text-center mt-12">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
-              Бүх ажил үзэх
-            </button>
-          </div>
+
+          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition-all shadow-md hover:shadow-lg">
+            Дэлгэрэнгүй
+          </button>
         </div>
-      </section>
+      ))}
+    </div>
+
+    <div className="text-center mt-12">
+      <button className="bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition">
+        Бүх ажил үзэх
+      </button>
+    </div>
+  </div>
+</section>
+
 
       {/* Companies */}
       <section className="py-20">
