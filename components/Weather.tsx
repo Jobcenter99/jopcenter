@@ -163,7 +163,7 @@ export default function JobCenterLanding() {
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-3">
               <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-auto w-80" />
-              <span className="text-xl text-yellow-500 bg-blue-100 px-2 py-1 rounded-full">v.01</span>
+              <span className="text-auto text-yellow-500 bg-blue-100 px-2 py-1 rounded-full">v.01</span>
             </div>
             <nav className="hidden md:flex space-x-8">
               <button className="text-gray-600 hover:text-gray-900 transition-colors">Сургалт</button>
