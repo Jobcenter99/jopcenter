@@ -219,3 +219,30 @@
   animation: zoomSlow 20s ease-in-out infinite;
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes pulse-red-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(153, 27, 27, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(153, 27, 27, 0.8);
+  }
+}
+
+.pulse-red {
+  animation: pulse-red-glow 2s infinite;
+}

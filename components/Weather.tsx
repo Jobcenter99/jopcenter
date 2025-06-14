@@ -157,28 +157,55 @@ export default function JobCenterLanding() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-40 backdrop-blur-md bg-gradient-to-r from-blue-400/80 via-blue-400/60 to-yellow-400/60 shadow-md border-b border-blue-200/30">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex justify-between items-center py-6">
-            <div className="flex items-center space-x-3">
-              <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-auto w-80" />
-              <span className="text-auto text-yellow-500 bg-blue-100 px-2 py-1 rounded-full">v.01</span>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <button className="text-gray-600 hover:text-gray-900 transition-colors">Сургалт</button>
-              <button className="text-gray-600 hover:text-gray-900 transition-colors">Байгууллага</button>
-              <button className="text-gray-600 hover:text-gray-900 transition-colors">Зөвлөгөө</button>
-            </nav>
-            <div className="flex items-center space-x-4">
-              <button className="text-gray-600 hover:text-gray-900 transition-colors">Нэвтрэх</button>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
-                Бүртгүүлэх
-              </button>
-            </div>
+{/* Header */}
+<header className="sticky top-0 z-50 shadow-md">
+  {/* Top Section: Logo + Mongolian Icons */}
+  <div className="bg-[#011e41]/95 backdrop-blur-md border-b border-white/10 text-white">
+    <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="flex items-center space-x-4">
+        {/* Rounded logo container with subtle inner glassy effect */}
+          <div className="relative p-1 rounded-full bg-white/90 shadow-lg ring-2 ring-red-800/60">
+          <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-20 w-auto rounded-full" />
           </div>
-        </div>
-      </header>
+        <span className="text-sm bg-yellow-300 text-blue-900 px-2 py-1 rounded-full font-semibold">
+          v.01
+        </span>
+      </div>
+      <div className="flex items-center space-x-4">
+        <img src="/icons/ger.svg" alt="Монгол гэр" className="h-8 w-auto" />
+        <img src="/icons/mongol-horse.png" alt="Монгол морь" className="h-8 w-auto" />
+        <img src="/icons/nomadic-icon.png" alt="Нүүдэлчин" className="h-8 w-auto" />
+        <img src="/icons/logo.png" alt="байгууллага" className="h-15 w-auto" />
+      </div>
+    </div>
+  </div>
+
+  {/* Bottom Section: Navigation */}
+  <div className="bg-blue-100 backdrop-blur-md">
+    <div className="max-w-7xl mx-auto px-6 py-3 flex flex-col md:flex-row md:justify-between md:items-center">
+      <nav className="flex justify-center md:justify-start space-x-6 mb-2 md:mb-0">
+        <button className="text-blue-900 hover:text-blue-700 font-medium transition">Мэдээ, мэдээлэл</button>
+        <button className="text-blue-900 hover:text-blue-700 font-medium transition">Байгууллагын танилцуулга</button>
+        <button className="text-blue-900 hover:text-blue-700 font-medium transition">Хамтын ажиллагаа</button>
+      </nav>
+      <div className="flex justify-center md:justify-end space-x-4">
+        <button className="text-blue-900 hover:text-blue-700 transition">Нэвтрэх</button>
+        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition">
+          Бүртгүүлэх
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+{/* Scrolling Banner */}
+<div className="bg-yellow-100 overflow-hidden">
+  <div className="marquee text-blue-900 font-medium py-2 px-4">
+    Монголын Үндэсний Хөдөлмөр Хамгаалал, Эрүүл Ахуйн холбооны дэргэдэх Сурталчилгаа, Маркетинг, Олон нийттэй харилцах алба
+  </div>
+</div>
+
+
 
       {/* News Banner */}
       <section className="bg-gradient-to-r from-blue-50 to-indigo-50 py-4">
