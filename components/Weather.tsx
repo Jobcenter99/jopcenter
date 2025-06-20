@@ -160,14 +160,14 @@ export default function JobCenterLanding() {
 {/* Header */}
 <header className="sticky top-0 z-50 shadow-md">
   {/* Top Section: Logo + Mongolian Icons */}
-  <div className="bg-[#011e41]/95 backdrop-blur-md border-b border-white/10 text-white">
+  <div className="bg-[#0057FF]/95 backdrop-blur-md border-b border-white/10 text-white">
     <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <div className="flex items-center space-x-4">
         {/* Rounded logo container with subtle inner glassy effect */}
-          <div className="relative p-1 rounded-full bg-white/90 shadow-lg ring-2 ring-red-800/60">
+        <div className="relative p-1 rounded-full bg-white/100 shadow-lg ring-2 ring-blue-800/60">
           <img src="/JBlogo.png" alt="Jobcenter Logo" className="h-20 w-auto rounded-full" />
-          </div>
-        <span className="text-sm bg-yellow-300 text-blue-900 px-2 py-1 rounded-full font-semibold">
+        </div>
+        <span className="text-sm px-2 py-1 rounded-full font-semibold" style={{ backgroundColor: '#F7F700', color: '#0057FF' }}>
           v.01
         </span>
       </div>
@@ -180,50 +180,32 @@ export default function JobCenterLanding() {
     </div>
   </div>
 
-  {/* Bottom Section: Navigation */}
-  <div className="bg-blue-100 backdrop-blur-md">
-    <div className="max-w-7xl mx-auto px-6 py-3 flex flex-col md:flex-row md:justify-between md:items-center">
-      <nav className="flex justify-center md:justify-start space-x-6 mb-2 md:mb-0">
-        <button className="text-blue-900 hover:text-blue-700 font-medium transition">Мэдээ, мэдээлэл</button>
-        <button className="text-blue-900 hover:text-blue-700 font-medium transition">Байгууллагын танилцуулга</button>
-        <button className="text-blue-900 hover:text-blue-700 font-medium transition">Хамтын ажиллагаа</button>
-      </nav>
-      <div className="flex justify-center md:justify-end space-x-4">
-        <button className="text-blue-900 hover:text-blue-700 transition">Нэвтрэх</button>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition">
-          Бүртгүүлэх
-        </button>
-      </div>
-    </div>
-  </div>
-</header>
 
 {/* Scrolling Banner */}
-<div className="bg-yellow-100 overflow-hidden">
-  <div className="marquee text-blue-900 font-medium py-2 px-4">
+<div className="overflow-hidden" style={{ backgroundColor: '#F7F700' }}>
+  <div className="marquee font-medium py-2 px-4" style={{ color: '#0057FF' }}>
     Монголын Үндэсний Хөдөлмөр Хамгаалал, Эрүүл Ахуйн холбооны дэргэдэх Сурталчилгаа, Маркетинг, Олон нийттэй харилцах алба
   </div>
 </div>
 
+{/* Bottom Section: Navigation */}
+<div className="backdrop-blur-md bg-[#e6e600]/60">
+  <div className="max-w-7xl mx-auto px-6 py-3 flex flex-col md:flex-row md:justify-between md:items-center">
+    <nav className="flex justify-center md:justify-start space-x-6 mb-2 md:mb-0">
+      <button className="font-medium transition" style={{ color: '#0057FF' }}>Мэдээ, мэдээлэл</button>
+      <button className="font-medium transition" style={{ color: '#0057FF' }}>Байгууллагын танилцуулга</button>
+      <button className="font-medium transition" style={{ color: '#0057FF' }}>Хамтын ажиллагаа</button>
+    </nav>
+    <div className="flex justify-center md:justify-end space-x-4">
+      <button className="transition" style={{ color: '#0057FF' }}>Нэвтрэх</button>
+      <button className="text-white px-4 py-2 rounded-lg font-medium transition" style={{ backgroundColor: '#0057FF' }}>
+        Бүртгүүлэх
+      </button>
+    </div>
+  </div>
+</div>
 
-
-      {/* News Banner */}
-      <section className="bg-gradient-to-r from-blue-50 to-indigo-50 py-4">
-        <div className="max-w-6xl mx-auto px-10">
-          <div className="flex items-center justify-center space-x-4 text-sm">
-            <span className="text-blue-600 font-medium">🎉Шинэ мэдээ🎉</span>
-            <span className="text-gray-700">Jobcenter.mn албан ёсны нээлт тун удахгүй</span>
-            <a
-              href="https://www.facebook.com/people/Jobcentermn/61569309015026/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-700 font-medium"
-            >
-              Дэлгэрэнгүй →
-            </a>
-          </div>
-        </div>
-      </section>
+</header>
 
       {/* Hero Section */}
       <section
@@ -287,6 +269,26 @@ export default function JobCenterLanding() {
           </div>
         </div>
       </section>
+
+{/* News Banner */}
+<section className="relative bg-[#e6e600]/20 backdrop-blur-md py-4 shadow-inner">
+  <div className="max-w-6xl mx-auto px-6 md:px-10">
+    <div className="flex flex-col md:flex-row items-center justify-between text-sm gap-y-2 md:gap-y-0">
+      <div className="flex items-center space-x-2">
+        <span className="text-[#0057FF] font-semibold text-base animate-pulse">🎉 Шинэ мэдээ</span>
+        <span className="text-gray-800 font-medium">Jobcenter.mn албан ёсны нээлт тун удахгүй</span>
+      </div>
+      <a
+        href="https://www.facebook.com/people/Jobcentermn/61569309015026/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[#0057FF] hover:text-blue-800 font-semibold transition duration-200"
+      >
+        Дэлгэрэнгүй →
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* Stats */}
       <section className="py-16 bg-gray-50">
