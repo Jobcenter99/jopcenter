@@ -10,21 +10,6 @@ const NewsSection = () => {
       image: "/newsitems/10.jpg",
     },
     {
-      title: "Ажил олгогчдод зориулсан сургалт",
-      text: "Хүний нөөцийн шилдэг аргачлалууд.",
-      image: "/newsitems/11.jpg",
-    },
-    {
-      title: "Jobcenter.mn албан ёсоор нээгдлээ",
-      text: "Манай шинэ платформ одоо бүрэн хүчин чадлаар ажиллаж байна.",
-      image: "/newsitems/12.jpg",
-    },
-        {
-      title: "Jobcenter.mn албан ёсоор нээгдлээ",
-      text: "Манай шинэ платформ одоо бүрэн хүчин чадлаар ажиллаж байна.",
-      image: "/newsitems/13.jpg",
-    },
-    {
       title: "Олон улсын жишигт нийцсэн Jobcenter",
       text: "2025 онд Аймаг, Нийслэлийн хэмжээнд 6 Жобцентр удахгүй нээгдэх юм.",
       image: "/newsitems/14.jpg",
@@ -215,7 +200,7 @@ export default function JobCenterLanding() {
       >
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 transition-all duration-800"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 transition-all duration-80"
           style={{ backgroundImage: `url(${heroImages[currentImage]})` }}
         />
 
@@ -224,9 +209,9 @@ export default function JobCenterLanding() {
 
         <div className="relative max-w-4xl mx-auto px-6 text-center z-10">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight drop-shadow-lg">
-            Мөрөөдлийн ажлаа
+            Хөдөлмөр Эрхлэлтийг
             <br />
-            <span className="text-blue-700 drop-shadow-xl">олоорой</span>
+            <span className="text-blue-700 drop-shadow-xl">Дэмжих төсөл</span>
           </h1>
           <p className="text-xl text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
             Монголын Үндэсний Хөдөлмөр Хамгаалал, Эрүүл Ахуйн Холбоо. 
