@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
-export default function Document() {
+export function Document() {
   return (
     <Html>
       <Head>
@@ -14,19 +14,3 @@ export default function Document() {
   );
 }
 
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Jobcenter.mn</title>
-        <meta name="description" content="Welcome to Jobcenter.mn" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      {/* Your page content */}
-      <main>
-        {/* ... */}
-      </main>
-    </>
-  )
-}
